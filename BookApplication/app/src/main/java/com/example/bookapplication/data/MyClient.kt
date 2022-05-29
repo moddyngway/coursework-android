@@ -18,7 +18,7 @@ object MyClient {
 
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://www.googleapis.com/books/v1/")
+            .baseUrl("https://course-app-build.herokuapp.com/api/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

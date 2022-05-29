@@ -1,5 +1,5 @@
 package com.example.bookapplication.model2
 
-data class BookModel(
+data class BlogModel(
     val items: List<Item>
 )

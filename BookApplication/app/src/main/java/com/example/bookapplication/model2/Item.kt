@@ -1,8 +1,9 @@
 package com.example.bookapplication.model2
 
 data class Item(
-    val etag: String,
-    val id: String,
-    val kind: String,
-    val volumeInfo: VolumeInfo
+    val category_str: String,
+    val title: String,
+    val description: String,
+    val image: String,
+    val text: String
 )

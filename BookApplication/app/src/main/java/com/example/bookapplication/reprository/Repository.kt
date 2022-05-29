@@ -6,5 +6,5 @@ class Repository {
     /*
     указываю сколько элементов получить и API key
      */
-    fun getClient(q: String) = MyClient.getInstanceOfMyRequest()?.getBooks(q, 5, "AIzaSyDNpo36bF-hhoGzBDEyLMqIllgfuLmg00I")
+    fun getClient() = MyClient.getInstanceOfMyRequest()?.getBooks()
 }

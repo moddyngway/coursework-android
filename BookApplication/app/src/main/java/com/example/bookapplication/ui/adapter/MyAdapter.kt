@@ -26,12 +26,15 @@ class MyAdapter:RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     lateinit var context:Context
 
     inner class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        val name: TextView by lazy { itemView.findViewById(R.id.name) }
-        val author: TextView = itemView.findViewById(R.id.author)
-        val pages: TextView =  itemView.findViewById(R.id.pages)
-        val year: TextView =  itemView.findViewById(R.id.year)
-        val rating: TextView = itemView.findViewById(R.id.rating)
+        val title_textview: TextView by lazy { itemView.findViewById(R.id.title) }
+        val category_textview: TextView = itemView.findViewById(R.id.category)
+        val text_textview: TextView = itemView.findViewById(R.id.text)
         val image: ImageView = itemView.findViewById(R.id.image)
+//
+//        fun myFun(item: Item){
+//            title_textview.text = item.title
+//            .text = item.category_str
+//        }
     }
 
 
@@ -46,27 +49,18 @@ class MyAdapter:RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val myList1 = myList[position]
-        holder.name.text = myList1?.volumeInfo?.title
-        holder.author.text = myList1?.volumeInfo?.authors?.get(0)?.toString()
-        holder.pages.text = myList1?.volumeInfo?.pageCount?.toString()
-        holder.year.text = myList1?.volumeInfo?.publishedDate
+        holder.title_textview.text = myList1?.title
+        holder.text_textview.text = myList1?.text
+        holder.category_textview.text = myList1?.category_str
+
+//        Glide.get(holder.image.context)
+        Glide.with(holder.image)
+            .load(myList1?.image)
+            .into(holder.image)
 
         /*
         в рейтинге место 0 будет показан N/A
          */
-        if(myList1?.volumeInfo?.averageRating?.toInt() == 0) holder.rating.text = "N/A"
-        else holder.rating.text = myList1?.volumeInfo?.averageRating.toString()
-
-
-        Glide.with(context)
-                .load(myList1?.volumeInfo?.imageLinks?.thumbnail)
-                .placeholder(R.drawable.load)
-                .into(holder.image)
-
-        holder.itemView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(myList1?.volumeInfo?.previewLink))
-            context.startActivity(intent)
-        }
     }
 
     override fun getItemCount(): Int {

@@ -19,10 +19,6 @@ import com.example.bookapplication.viewmodel.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel: MainActivityViewModel by lazy { ViewModelProvider(this).get(
-            MainActivityViewModel::class.java
-    ) }
-
     lateinit var myadapter: MyAdapter
     lateinit var recycler: RecyclerView
 
@@ -39,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         Загрузка главного фото в начале
          */
 
-        val image = Glide.with(this)
+        Glide.with(this)
             .load("https://file.liga.net/images/general/2020/09/08/20200908171549-5386.jpg")
             .placeholder(R.drawable.load)
             .into(mainImage)

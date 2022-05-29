@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Book/BookApplication/app/src/main/res/layout/activity_book.xml" value="0.36666666666666664" />
+        <entry key="..\:/Book/BookApplication/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Book/BookApplication/app/src/main/res/layout/book_item.xml" value="0.33" />
+        <entry key="..\:/Book/BookApplication/app/src/main/res/xml/network_security_config.xml" value="0.17395833333333333" />
+      </map>
+    </option>
+  </component>
   <component name="EntryPointsManager">
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="retrofit2.http.GET" />
